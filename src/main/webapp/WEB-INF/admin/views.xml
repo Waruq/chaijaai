@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+ 
+<tiles-definitions> 
+	<definition name="admin-base" template="/WEB-INF/layouts/admin/default.jsp">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="header" value="/WEB-INF/layouts/admin/header.jsp" />  
+       <put-attribute name="menu" value="/WEB-INF/layouts/admin/menu.jsp" />  
+       <put-attribute name="body" value="" />  
+       <put-attribute name="footer" value="/WEB-INF/layouts/admin/footer.jsp" />  
+   </definition>  
+
+	 <definition name="index" extends="admin-base">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/admin/Index.jsp" />  
+   </definition>  
+   
+   <definition name="category" extends="admin-base">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/admin/Category.jsp" />  
+   </definition> 
+   <definition name="type" extends="admin-base">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/admin/Type.jsp" />  
+   </definition> 
+   <definition  name="flavor" extends="admin-base">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/admin/Flavor.jsp" />  
+   </definition>
+   <definition  name="unit" extends="admin-base">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/admin/Unit.jsp" />  
+   </definition> 
+   <definition name="product" extends="admin-base">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/admin/Product.jsp" />  
+   </definition> 
+   <definition  name="productlist" extends="admin-base">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/admin/ProductList.jsp" />  
+   </definition>  
+</tiles-definitions>
