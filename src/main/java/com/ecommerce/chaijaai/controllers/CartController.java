@@ -1,5 +1,8 @@
 package com.ecommerce.chaijaai.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +13,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ecommerce.chaijaai.dao.CartDao;
 import com.ecommerce.chaijaai.model.Cart;
+import com.ecommerce.chaijaai.model.CartItem;
+import com.ecommerce.chaijaai.model.Product;
 
 @Controller
 @RequestMapping("/cart")
@@ -21,14 +27,34 @@ public class CartController {
 
 	@Autowired
 	CartDao cartDao;
+	
 
-public String get(Model model,HttpSession session){
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value="/add/{quantity}/{id}",method=RequestMethod.GET)
+	public @ResponseBody boolean addToCart(@PathVariable("quantity") Integer quantity,HttpSession session,
+							 @PathVariable("id") Product product) {
+		if(session.getAttribute("cartItemsList") == null) {
+			session.setAttribute("cartItemsList",new ArrayList<CartItem>());
+		}
+				
+		CartItem cartItem = new CartItem();
+		cartItem.setProduct(product);
+		cartItem.setQuantity(quantity);
+				
+	    ((List<CartItem>)session.getAttribute("cartItemsList")).add(cartItem);
+	
+	    System.err.println(((List<CartItem>)session.getAttribute("cartItemsList")).size()+"------------");
+		return true;
+	}
+
+	@RequestMapping(method=RequestMethod.GET)
+	public String get(Model model,HttpSession session){
 		
 		if(!model.containsAttribute("cart")) {
 			Cart cart = new  Cart();
 			model.addAttribute("cart", cart);
 		}
-		model.addAttribute("cartList",cartDao.findAll());		
+		model.addAttribute("cartList",(List<CartItem>)session.getAttribute("cartItemsList"));		
 		
 		return "cart";
 	}	

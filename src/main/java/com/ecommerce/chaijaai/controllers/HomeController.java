@@ -30,8 +30,8 @@ public class HomeController {
 	
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String get(Model model){
-
 		
+		System.err.println("in errrrrrrrrrrrrrrr");
 		return "home";
 	}
 	

@@ -42,7 +42,7 @@ public class ChaiJaaiApplication extends SpringBootServletInitializer {
 	public TilesConfigurer tilesConfigurer() {
 		TilesConfigurer tilesConfigurer = new TilesConfigurer();
 		System.err.println("in tiles config");
-		String def[] = {"/WEB-INF/tiles/admin.xml","/WEB-INF/tiles/user.xml"};
+		String def[] = {"/WEB-INF/admin/views.xml","/WEB-INF/user/views.xml"};
 		tilesConfigurer.setDefinitions(def);
 		return tilesConfigurer;
 	}

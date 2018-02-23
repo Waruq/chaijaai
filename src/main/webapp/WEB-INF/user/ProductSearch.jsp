@@ -117,9 +117,7 @@
 								</div>
 							</div>
 
-							<div id="product_listing_preloader">
-								<div class="global_loader"></div>
-							</div>
+							
 
 							<div id="collection_sorted">
 								<!-- products listing -->
@@ -138,14 +136,14 @@
 												</a>
 												<div class="product_links">
 													<div class="product_btn_wrapper">
-														<a class="quick_view_btn" href="../../products/black-tea-samples-chinese-breakfast"><i class="material-icons-visibility"></i>Quick view</a>
+														<a class="quick_view_btn" href="#"><i class="material-icons-visibility"></i>Quick view</a>
 
 														<div class="product_links_border"></div>
 
 														<form method="post" action="/cart/add">
 
 
-															<a class="btn_options" href="../../products/black-tea-samples-chinese-breakfast" title="Add to cart"><i class="material-icons-local_grocery_store"></i> Add to cart</a>
+															<a class="btn_options" href="${product.id}" title="Add to cart"><i class="material-icons-local_grocery_store"></i> Add to cart</a>
 
 
 														</form>
@@ -169,21 +167,6 @@
 <!-- 													<span class="money money_sale">$ 1}.00</span>
  -->												</div>
 
-												<div class="product_links">
-													<div class="product_btn_wrapper">
-														<a class="quick_view_btn" href="../../products/black-tea-samples-chinese-breakfast"><i class="material-icons-visibility"></i>Quick view</a>
-
-														<div class="product_links_border"></div>
-
-														<form method="post" action="/cart/add">
-
-
-															<a class="btn_options" href="../../products/black-tea-samples-chinese-breakfast" title="Add to cart"><i class="material-icons-local_grocery_store"></i> Add to cart</a>
-
-
-														</form>
-													</div>
-												</div>
 											</div>
 										</div>
 									</div>
@@ -327,5 +310,93 @@
 					</div>
 				</div>
 			</div>
-
 			
+	<!-- Modal structure -->
+	<div id="modal" style="padding:10px;">
+		<!-- data-iziModal-fullscreen="true"  data-iziModal-title="Welcome"  data-iziModal-subtitle="Subtitle"  data-iziModal-icon="icon-home" -->
+		<!-- Modal content -->
+		<div class="close">
+		<!-- 	<a data-izimodal-close="">×</a> -->
+		<a title="Close" id="quick_view__close"  data-izimodal-close=""  class="fancybox-item fancybox-close" href="javascript:;"></a>
+		</div>
+		
+	
+			<div class="quick_view__left">
+			<div id="img_big"><img src="//cdn.shopify.com/s/files/1/1239/5002/products/teas-etc-fowering-green-tea-sampler-s0601-8-count_01.png?v=1460115790" alt=""></div>
+								
+							</div>
+							<div class="quick_view__right">
+							
+									<p id="quick_view__name" class="product_name"><a href="/products/teas-etc-fowering-green-tea-sampler-s0601-8-count">Teas Etc Fowering Green Tea Sampler S0601 8 Count</a></p>
+									<p id="quick_view__type"><label for="">Product type:</label> <span>Detox teas</span></p>
+									<!-- <p id="quick_view__vendor"><label for="">Vendor:</label> <span>TEA CLUB</span></p>
+									<p id="quick_view__variants"><label for="">Options:</label>
+										<div class="selector-wrapper"><select class="single-option-selector" data-option="option1" id="product-select-option-0"><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select></div><select id="product-select" name="id" class="hidden" style="display: none;"><option value="18522755203">L - 1600</option><option value="18522755267">XL - 1400</option><option value="18522755331">XXL - 1200</option></select></p>
+									 --><p id="quick_view__price" class="product_price"><span class="money" data-currency-usd="$ 16.00">$ 16.00</span></p>
+									<p id="quick_view__availability"><label for="">Availability:</label> <span class="notify_success">Available</span></p>
+									<div id="quick_view__form"><label for="quantity">Choose quantity:</label>
+										<div class="quantity_box"><input min="1" type="text" name="quantity" value="1" class="quantity_input"><span class="quantity_modifier quantity_down"><i class="fa fa-minus"></i></span><span class="quantity_modifier quantity_up"><i class="fa fa-plus"></i></span></div><button class="btn btn-cart" type="submit" id="quick_view__add">Add to cart</button></div>
+								
+							</div>
+		
+		<p class="con"></p>
+		
+	</div>
+	
+	<!-- Modal structure -->
+	<div id="btncart" style="padding:10px;">
+		<!-- data-iziModal-fullscreen="true"  data-iziModal-title="Welcome"  data-iziModal-subtitle="Subtitle"  data-iziModal-icon="icon-home" -->
+		<!-- Modal content -->
+		<div class="close">
+		<!-- 	<a data-izimodal-close="">×</a> -->
+		<a title="Close" id="quick_view__close"  data-izimodal-close=""  class="fancybox-item fancybox-close" href="javascript:;"></a>
+		</div>
+		<div id="cart_added"><h4>Product added to cart</h4>
+				<div class="cart_added__row"><div class="cart_added__1" id="cart_added__img">
+					<img src="https://cdn.shopify.com/s/files/1/1239/5002/products/black-tea-samples-chinese-breakfast_01.png?v=1460115547" alt=""></div>
+					<div class="cart_added__2">
+						<span id="cart_added__name" class="product_name">Black Tea Samples Chinese Breakfast - Black / XL / Ground</span>
+						<p id="cart_added__quantity">Quantity: <span>3</span></p>
+						<a class="btn" href="cart">Go to cart</a>
+						<a class="btn btn-alt" id="cart_added__close" href="#">Continue shopping</a>
+					</div>
+				</div>
+		</div>			
+		
+		<p class="con"></p>
+		
+	</div>
+	
+	
+	<!-- Trigger to open Modal -->
+	<a href="https://github.com/dolce/iziModal" class="trigger">Modal</a>
+	
+	<script>
+	var data;
+	var id;
+	$(document).on('click','.btn_options',function(){
+		id = $(this).attr('href');
+		var url ="${pageContext.servletContext.contextPath}/tea/product/"+id;
+		$.get(url,function(data){	
+			$('#img_big > img').attr('src','${pageContext.servletContext.contextPath}/image/'+data.images[0]);
+			$('#quick_view__name > a').text(data.name);
+			$('#quick_view__type> span').text(data.type.name);
+			$('#quick_view__price> span').text(data.price);
+		});
+	});
+	
+	$(document).on('click','#quick_view__add',function(){
+		var quantity = $('.quantity_input').val();
+		var url="${pageContext.servletContext.contextPath}/cart/add/"+quantity+"/"+id;
+		$.get(url,function(data){
+			if(data){
+				$('#cart_added__img > img').attr('src',$('#img_big > img').attr('src'))
+				$('#cart_added__name').text($('#quick_view__name > a').text());
+				$('#cart_added__quantity>span').text($('.quantity_input').val());
+				return false;
+			}
+			$('#cart_added').empty().html('<h1>Item cannot be added to cart.Please try again</h1>')
+		})
+		
+	});
+	</script>

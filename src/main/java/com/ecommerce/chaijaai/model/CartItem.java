@@ -25,14 +25,7 @@ public class CartItem {
 	@NotNull(message="Quantity is required")
 	@Column(name="Quantity")
 	Integer quantity;
-	
-	@NotNull(message="Unit Price is required")
-	@Column(name="Unit_Price")
-	Double unitPrice;
-	
-	@NotNull(message="Price is required")
-	@Column(name="Price")
-	Double price;
+
 
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="Cart_ID")
@@ -60,22 +53,6 @@ public class CartItem {
 
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
-	}
-
-	public Double getUnitPrice() {
-		return unitPrice;
-	}
-
-	public void setUnitPrice(Double unitPrice) {
-		this.unitPrice = unitPrice;
-	}
-
-	public Double getPrice() {
-		return price;
-	}
-
-	public void setPrice(Double price) {
-		this.price = price;
 	}
 
 

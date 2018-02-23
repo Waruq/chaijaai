@@ -13,12 +13,8 @@
 	<div class="container">
 		<ul class="breadcrumb">
 			<li><a href="../default.htm" class="homepage-link" title="Back to the frontpage">Home</a></li>
-			
-				
-					<li><a href="../collections/types@q=Detox%20teas" title="Detox teas">Detox teas</a> </li>
-				
-				<li><span class="page-title">Organic Cranberry Black Tea Loose Leaf Bag</span></li>
-			
+			<li><a href="../collections/types@q=Detox%20teas" title="Detox teas">Detox teas</a> </li>
+			<li><span class="page-title">Organic Cranberry Black Tea Loose Leaf Bag</span></li>
 		</ul>
 	</div>
 </div>

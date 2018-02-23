@@ -9,11 +9,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ecommerce.chaijaai.dao.GeneralDao;
 import com.ecommerce.chaijaai.dao.ProductDao;
 import com.ecommerce.chaijaai.dao.ProductFlavorDao;
 import com.ecommerce.chaijaai.dao.ProductTypeDao;
+import com.ecommerce.chaijaai.model.Product;
 
 @Controller
 @RequestMapping("/tea")
@@ -64,6 +66,11 @@ public class TeaController {
 			model.addAttribute("product",productDao.findOne(id));
 			return "productview";
 			
+		}
+		
+		@RequestMapping(value="/product/{id}",method=RequestMethod.GET)
+		public @ResponseBody Product getProduct(@PathVariable("id") Long id) {
+			return productDao.findOne(id);
 		}
 }
 

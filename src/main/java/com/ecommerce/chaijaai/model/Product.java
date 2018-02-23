@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import java.util.ArrayList;
@@ -62,6 +64,7 @@ public class Product {
 	@JoinColumn(name="Flavor_ID")
 	ProductFlavor flavor;
 	
+	@LazyCollection(LazyCollectionOption.FALSE)
 	@ElementCollection
 	@CollectionTable(name="Product_Images")
 	List<String> images = new ArrayList<String>();
