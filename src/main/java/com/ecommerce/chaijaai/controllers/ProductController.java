@@ -71,9 +71,9 @@ public class ProductController {
 		}
 		
 		for(int i=0;i<files.length;i++) {
-			String filename = Constants.PATH+"/"+product.getName()+i+".jpg";
+			String filename =product.getName()+i+".jpg";
 			try {
-				files[i].transferTo(new File(filename));
+				files[i].transferTo(new File( Constants.PATH+"/"+filename));
 				product.getImages().add(filename);
 			} catch (IllegalStateException | IOException e) {
 				redirectAttributes.addFlashAttribute("product", product);

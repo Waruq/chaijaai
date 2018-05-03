@@ -23,7 +23,7 @@
 						<div class="row">
 							<div class="col-lg-12">
 								<div class="element-wrapper">
-									<h6 class="element-header">Type</h6>
+									<h6 class="element-header">Flavor</h6>
 									<c:if test="${not empty success}">
 											 <div class="alert alert-success">${success}</div>
 											</c:if>
@@ -32,7 +32,7 @@
 											</c:if>
 									<div class="element-box">
 										<form:form action="${action}" method="post" modelAttribute="flavor">
-											<h5 class="form-header">Type</h5>
+											<h5 class="form-header">Flavor</h5>
 											<div class="form-desc">Add and Edit product flavor's here</div>
 											<div class="form-group"><label for="">Name</label><form:input class="form-control" path="name" placeholder="Enter category name" type="text"/></div>
 											<div class="form-buttons-w"><button class="btn btn-primary" type="submit"> ${button}</button></div>

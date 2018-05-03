@@ -230,7 +230,7 @@ START - Menu side
 							<a href="${pageContext.servletContext.contextPath}/flavor">
 								<div class="icon-w">
 									<div class="os-icon os-icon-delivery-box-2"></div>
-								</div><span>flavor</span></a>
+								</div><span>Flavor</span></a>
 						</li>
 						<li class="sub-menu">
 							<a href="${pageContext.servletContext.contextPath}/type">
