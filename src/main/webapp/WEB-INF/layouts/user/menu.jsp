@@ -449,7 +449,7 @@
 
 						<!-- HEADER CART -->
 						<div class="header_cart">
-							<a href="/cart"><i class="material-icons-local_grocery_store"></i><span id="cart_items">0</span></a>
+							<a href="/cart"><i class="material-icons-local_grocery_store"></i><!-- <span id="cart_items">0</span> --></a>
 						</div>
 
 					</div>
