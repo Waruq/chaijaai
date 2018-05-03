@@ -36,7 +36,7 @@
 								</div>
 							</div>
 							</c:if>
-							<c:if test="${fn:length(cartList) > 1}">
+							<c:if test="${fn:length(cartList) > 0}">
 							<div class="cart_page">
 								<div id="cart_loader" class="loader_off">
 									<div class="global_loader"></div>
@@ -58,7 +58,6 @@
 													<th></th>
 												</tr>
 											</thead>
-
 											<tbody>
 											   <c:forEach items="${cartList}" var="item">	 
 												<tr class="cart_item" data-id="18522755203">

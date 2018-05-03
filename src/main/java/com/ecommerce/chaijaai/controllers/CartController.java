@@ -47,6 +47,7 @@ public class CartController {
 		return true;
 	}
 
+	@SuppressWarnings("unchecked")
 	@RequestMapping(method=RequestMethod.GET)
 	public String get(Model model,HttpSession session){
 		
@@ -54,6 +55,7 @@ public class CartController {
 			Cart cart = new  Cart();
 			model.addAttribute("cart", cart);
 		}
+		System.err.println((List<CartItem>)session.getAttribute("cartItemsList")+"-----");
 		model.addAttribute("cartList",(List<CartItem>)session.getAttribute("cartItemsList"));		
 		
 		return "cart";

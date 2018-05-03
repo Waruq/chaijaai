@@ -357,7 +357,7 @@
 					<div class="cart_added__2">
 						<span id="cart_added__name" class="product_name">Black Tea Samples Chinese Breakfast - Black / XL / Ground</span>
 						<p id="cart_added__quantity">Quantity: <span>3</span></p>
-						<a class="btn" href="cart">Go to cart</a>
+						<a class="btn" href="/cart">Go to cart</a>
 						<a class="btn btn-alt" id="cart_added__close" href="#">Continue shopping</a>
 					</div>
 				</div>
